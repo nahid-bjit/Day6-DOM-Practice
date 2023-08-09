@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice</title>
+</head>
+<body>
+
+    <div id="div1">
+        <h1 style="background-color: skyblue;" id="ourHeader" onclick="onClickHandler()" onmouseover="onMouseOVerHandler()" onmouseleave="onMouseLeaveHandler()">Original Heading</h1>
+
+    </div>
+
+    <button id="btn" onclick="creatingElements()">Click Me</button>
+
+    <script>
+        const ourHeaderDom = document.getElementById("ourHeader");
+        const btnDom = document.getElementById("btn")
+        div1Dom = document.getElementById("div1");
+
+
+        ourHeaderDom.style.color = "purple";
+        ourHeaderDom.style.padding = "100px";
+        ourHeaderDom.borderRadius = "10px";
+        btnDom.addEventListener('click', () => {
+            console.log("click is happeing");
+            ourHeaderDom.style.color = "maroon"
+        })
+
+        function onClickHandler () {
+            console.log("click is happeing");
+            ourHeaderDom.style.fontSize = "100px";
+        }
+
+        function onMouseOVerHandler () {
+            console.log("Click is Happeing!!");
+            ourHeaderDom.style.fontSize = "20px";
+            ourHeaderDom.innerText = "This header is hovering"
+        }
+
+        function onMouseLeaveHandler () {
+            console.log("CLick is happeing");
+            ourHeaderDom.style.fontSize = "50px";
+            ourHeaderDom.innerText = "Back to the earth"
+        }
+
+        function creatingElements () {
+            const para = document.createElement("p");
+            para.innerText = "This is newly added";
+            para.style.color = "tomato";
+            div1Dom.appendChild(para)
+
+        }
+
+    </script>
+
+
+
+    
+</body>
+</html>
